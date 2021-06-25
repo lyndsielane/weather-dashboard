@@ -1,0 +1,17 @@
+:root {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-image: linear-gradient(to right, blue, navy);
+    background-size: cover;
+}
+
+header p {
+    text-align: center;
+    color: white;
+    font-size: 65px;
+    font: 'Roboto', sans-serif;
+    margin: 0;
+}
