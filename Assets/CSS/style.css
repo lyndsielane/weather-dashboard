@@ -1,10 +1,12 @@
 :root {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    --light-blue: #3495eb;
+    --dark-blue: #053a69;
 }
 
 header {
-    background-image: linear-gradient(to right, blue, navy);
+    background-image: linear-gradient(to right, var(--light-blue), #236299 50%, var(--dark-blue));
     background-size: cover;
 }
 
@@ -14,4 +16,16 @@ header p {
     font-size: 65px;
     font: 'Roboto', sans-serif;
     margin: 0;
+    padding: 5px;
+}
+
+hr {
+    background-color: slategray;
+    height: 1px;
+    border: none;
+}
+
+#search-btn {
+    width: 100%;
+    background-color: var(--light-blue);
 }
