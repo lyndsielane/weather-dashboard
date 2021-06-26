@@ -1,4 +1,6 @@
 var apiKey = "2b99b21d7b96e0eb1368248ef3f011fd";
+var weatherData;
+var cityData;
 
 function parseWeatherData(data) {
     var parseWeatherList = {
@@ -21,14 +23,9 @@ function parseWeatherData(data) {
                 temps: [],
                 windSpeeds: [],
                 humidities: [],
-                averages: {
-                    temp: 0,
-                    windSpeed: 0,
-                    humidity: 0,
-                    uvIndex: 0,
-                }
+                uvIndex: [],
             }; 
-        }
+        };
 
         parseWeatherList.days[date].temps.push(weatherData.main.temp);
         parseWeatherList.days[date].windSpeeds.push(weatherData.wind.speed);
@@ -38,27 +35,18 @@ function parseWeatherData(data) {
     return parseWeatherList;
 }
 
-function calculateAvg(parseWeatherList) {
-    //TODO: add calculations for averages
-
-    return parseWeatherList
-}
-
 $("#search-form").on("submit", async function (e) {
     e.preventDefault();
 
-    var city = $("#city-input").val();
+   var city = $("#city-input").val();
     
-    var fiveDayForecast = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
+    cityData = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
         .then(response => response.json())
-        .then(data => parseWeatherData(data))
-        .then(parseWeatherList => calculateAvg(parseWeatherList));
+        //.then(data => parseWeatherData(data))
+        //.then(parseWeatherList => calculateAvg(parseWeatherList));
 
-    var currentDateData = await fetch(`http://api.openweathermap.org/data/2.5/onecall?&appid=${apiKey}&lon=${fiveDayForecast.lon}&lat=${fiveDayForecast.lat}&units=imperial&exclude=daily,minutely,alerts,hourly`)
+    weatherData = await fetch(`http://api.openweathermap.org/data/2.5/onecall?&appid=${apiKey}&lon=${cityData.coord.lon}&lat=${cityData.coord.lat}&units=imperial&exclude=minutely,alerts,hourly`)
         .then(response => response.json());
 
-    console.log(fiveDayForecast.days);
-    console.log(currentDateData.current);
+    console.log(weatherData);
 });
-
-
