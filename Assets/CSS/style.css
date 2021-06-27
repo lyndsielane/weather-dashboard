@@ -23,7 +23,6 @@ hr {
     background-color: slategray;
     height: 1px;
     border: none;
-    margin-right: 15px;
 }
 
 h4 {
@@ -38,9 +37,17 @@ h4 {
     font-family: 'Roboto', sans-serif;
 }
 
+#sidebar {
+    padding-right: 30px;
+}
+
 #search-btn {
     width: 100%;
     background-color: var(--light-blue);
+}
+
+.city-history-button {
+    width: 100%;
 }
 
 #weather-stats {
@@ -55,12 +62,8 @@ h4 {
     font-family: 'Roboto', sans-serif;
 }
 
-#search-form {
-    margin-right: 15px;
-}
-
 .forecast-card {
-    background-color: #236299;
+    background-color: #3495eb;
     color: white;
     padding: 5px 20px 5px 5px;
     border-radius: 5px;
