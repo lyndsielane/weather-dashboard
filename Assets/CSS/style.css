@@ -23,11 +23,19 @@ hr {
     background-color: slategray;
     height: 1px;
     border: none;
+    margin-right: 15px;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .bold {
     font-weight: bold;
     font-size: 35px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #search-btn {
@@ -37,4 +45,27 @@ hr {
 
 #weather-stats {
     border: 1px solid black;
+    margin-bottom: 15px;
+}
+
+#five-day-header {
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#search-form {
+    margin-right: 15px;
+}
+
+#date {
+    font-family: 'Roboto', sans-serif;
+}
+
+#temp, #wind, #humidity, #uvi {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#forecast-cards {
+    font-family: 'Open Sans', sans-serif;
 }

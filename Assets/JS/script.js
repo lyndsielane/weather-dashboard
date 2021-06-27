@@ -28,6 +28,10 @@ function setCurrentDay(currentDay, city) {
         
 };
 
-function setForecastCards() {
+function buildForecastCards() {
+    
+}
 
+function setForecastCards() {
+    var cardHolders = $("#forecast-cards");
 }
