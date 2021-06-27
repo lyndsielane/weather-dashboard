@@ -13,16 +13,21 @@ $("#search-form").on("submit", async function (e) {
 
     console.log(weatherData);
 
-    setCurrentDay(weatherData.current, cityData.name);
+    setCurrentDay(weatherData.current, cityData.name,);
 });
 
 function setCurrentDay(currentDay, city) {
 
     $("#city").empty().append(city);
-    $("#date").empty().append(moment.unix(currentDay.dt).format("YYYY-MM-DD"));
+    $("#date").empty().append(moment.unix(currentDay.dt).format("M/DD/YYYY"));
+    //$("#icon").empty().append(currentDay.weather[0].icon);
     $("#temp").empty().append(currentDay.temp);
     $("#wind").empty().append(currentDay.wind_speed);
     $("#humidity").empty().append(currentDay.humidity);
     $("#uvi").empty().append(currentDay.uvi);
         
+};
+
+function setForecastCards() {
+
 }

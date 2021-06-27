@@ -25,7 +25,16 @@ hr {
     border: none;
 }
 
+.bold {
+    font-weight: bold;
+    font-size: 35px;
+}
+
 #search-btn {
     width: 100%;
     background-color: var(--light-blue);
+}
+
+#weather-stats {
+    border: 1px solid black;
 }
