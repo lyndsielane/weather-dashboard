@@ -15,13 +15,13 @@ $(document).on("click", ".city-history-button", function(event) {
 });
 //this API allows us to learn the latitude and longitude of the searched city
 async function loadCityWeather(city) {
-    var cityData = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+    var cityData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
         .then(response => response.json());
 
     saveCity(cityData.name);
 
     //The latitude and longitude from the previous API is pushed into the one call weather API, that data is then pulled into a string to use for the forecasts.
-    var weatherData = await fetch(`http://api.openweathermap.org/data/2.5/onecall?&appid=${apiKey}&lon=${cityData.coord.lon}&lat=${cityData.coord.lat}&units=imperial&exclude=minutely,alerts,hourly`)
+    var weatherData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?&appid=${apiKey}&lon=${cityData.coord.lon}&lat=${cityData.coord.lat}&units=imperial&exclude=minutely,alerts,hourly`)
         .then(response => response.json());
 
     //Two functions are set from here - currentDay which pulls the current day information and ForecastCards which is the data used for the 5-day forecast.
