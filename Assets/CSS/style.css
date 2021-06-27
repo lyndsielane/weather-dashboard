@@ -58,14 +58,24 @@ h4 {
     margin-right: 15px;
 }
 
-#date {
-    font-family: 'Roboto', sans-serif;
+.forecast-card {
+    background-color: #236299;
+    color: white;
+    padding: 5px;
 }
 
-#temp, #wind, #humidity, #uvi {
-    font-family: 'Open Sans', sans-serif;
+#cards {
+    display: flex;
+    justify-content: space-between;
 }
 
-#forecast-cards {
-    font-family: 'Open Sans', sans-serif;
+.foredate {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
 }
